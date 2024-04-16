@@ -1,0 +1,7 @@
+{
+  "name": "criadorDeLista",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
