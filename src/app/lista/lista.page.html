@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Crie sua Lista</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">lista</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-item>
+    <br><br>
+    <ion-input type="text" placeholder="Digite aqui.." [(ngModel)]="itemAComprar" style="--background:#36abe0">Nome do Produto</ion-input>
+    <div></div>
+    <ion-input type="text" [(ngModel)]="valorACobrar" style="--background:#36abe0">Valor</ion-input>
+    <div></div>
+    <ion-input type="text" [(ngModel)]="quantidadeAComprar" style="--background:#36abe0">Quantidade</ion-input>
+    <div></div>
+    <ion-button (click)="adicionarItem()"> + </ion-button>
+  </ion-item>
+
+  <div padding>
+    <ion-list>
+      <ion-item *ngFor="let itemAtual of listaDeCompra; let i = index">
+        <div>Nome: {{itemAtual.nome}} </div>
+        <div> Valor: {{itemAtual.valor}} </div>
+        <div> Quantidade: {{itemAtual.quantidade}} </div>
+        <div slot="end">
+          <ion-button fill="clear" (click)="editarItem(i)"><ion-icon name="pencil-outline"></ion-icon> </ion-button>
+          <ion-button fill="clear" (click)="apagarItem(i)"><ion-icon name="trash"></ion-icon></ion-button>
+        </div>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <div id="container">
+    <ion-button slot="end" href="/home" style="--background:#36abe0"> Voltar </ion-button>
+  </div>
+
+</ion-content>
